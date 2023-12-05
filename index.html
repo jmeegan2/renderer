@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="style.css">
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+      <title>Smart-Home</title>
+
+
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="#" class="logo">
+            <img src="logo.png" alt="">
+            <span class="nav-item">HomeSync</span>
+          </a>
+        </li>
+
+        <li><a href="#">
+          <i class='bx bxs-dashboard icon' ></i>
+          <span class="nav-item">Dashboard</span>
+        </a></li>
+
+        <li><a href="#">
+          <i class='bx bx-shield icon' ></i>
+          <span class="nav-item">Security</span>
+        </a></li>
+
+        <li><a href="#">
+          <i class='bx bx-bulb icon' ></i>
+          <span class="nav-item">Light</span>
+        </a></li>
+
+        <li><a href="#">
+          <i class='bx bxs-thermometer icon' ></i>
+          <span class="nav-item">Climate</span>
+        </a></li>
+
+        <li><a href="#">
+          <i class='bx bx-devices icon'></i>
+          <span class="nav-item">Devices</span>
+        </a></li>
+
+        <li><a href="#">
+          <i class='bx bx-stats icon' ></i>
+          <span class="nav-item">Activity Log</span>
+        </a></li>
+
+        <li><a href="#" class="logout">
+          <i class='bx bx-exit icon' ></i>
+          <span class="nav-item">Logout</span>
+        </a></li>
+
+      </ul>
+    </nav>
+<!-------------------------- CONTENT --------------------------------------->
+  <div class="main">
+    <h1>DASHBOARD</h1>
+
+    <div class="blocks">
+      <div class="block">
+        <span class="security-block">Security</span>
+        <div class="shield">
+          <i class='bx bxs-check-shield' ></i>
+        </div>
+
+          <label class="toggle-btn">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+
+        <span class="toggle">Front Door</span>
+      </div>
+
+      <div class="block">
+        <span class="light-block">Lights</span>
+        <div class="bulb">
+          <i class='bx bxs-bulb' ></i>
+        </div>
+
+        <label class="toggle-btn">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+
+      </div>
+
+      <div class="block">
+        <span class="climate-block">Climate</span>
+
+        <div class="gauge">
+          <div class="gauge_body">
+            <div class="gauge_fill"></div>
+            <div class="gauge_cover"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="block">
+        <span class="device-block">Devices</span>
+      </div>
+
+
+      <div class="block">
+        <span class="energy-block">Energy Monitor</span>
+      </div>
+
+      <div class="block">
+        <span class="activity-block">Recent Activity</span>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const gaugeElement = document.querySelector(".gauge");
+
+    function setGaugeValue(gauge, value) {
+        if (value < 0 || value > 1) {
+            return;
+        }
+
+        gauge.querySelector(".gauge_fill").style.transform = `rotate(${value / 2}turn)`;
+        gauge.querySelector(".gauge_cover").textContent = `${Math.round(value * 100)} C`;
+    }
+        setGaugeValue(gaugeElement, 0.2);
+  </script>
+
+  </body>
+  </html>
